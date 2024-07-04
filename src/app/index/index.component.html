@@ -1,0 +1,157 @@
+<div class="vg-main-wrapper">
+  <div class="vg-page page-home" id="home" style="background-image: url(../assets/img/background.jpg);">
+    <div class="caption wow zoomInRight">
+      <!-- <h1 class="fw-normal">It's Me</h1> -->
+      <h2 class="fw-medium fg-white">{{ pinfo?.name }}</h2>
+      <p class="tagline">{{ pinfo?.who }}</p>
+    </div>
+  </div>
+  
+  <!-- Page About -->
+  <div class="vg-page page-about" id="about">
+    <!-- Profile -->
+    <div class="d-flex flex-column justify-content-start align-items-start">
+      <div class="d-flex flex-row justify-content-between align-items-center" style="width: 100%;">
+        <div class="img-place wow zoomIn">
+          <img [src]="pinfo?.photo" alt="Photo Profile">
+        </div>
+        <div class="caption wow fadeInRight">
+          <h2 class="fg-dark">{{ pinfo?.name }}</h2>
+          <p class="fg-theme fw-medium">{{ pinfo?.who }}</p>
+          <p>{{ pinfo?.description }}</p>
+          <ul class="theme-list">
+            <li class="fg-dark"><b>From:</b> {{ pinfo?.from }}</li>
+            <li class="fg-dark"><b>Lives In:</b> {{ pinfo?.live }}</li>
+            <li class="fg-dark"><b>Gender:</b> {{ pinfo?.gender }}</li>
+            <li class="fg-dark"><b>Email:</b> {{ pinfo?.phone }}</li>
+          </ul>
+           <!-- <button class="btn btn-theme btn-rounded">Hire Me</button> -->
+        </div>
+      </div>
+    </div>
+    <!-- End profile -->
+
+
+    <!-- Skills -->
+    <div class="d-flex flex-column justify-content-around align-items-center p-3" style="gap: 10px;">
+      <h1 class="text-center fg-dark wow fadeInUp">My Skills</h1>
+      <div class="progress-wrapper wow fadeInUp d-flex flex-row justify-content-start align-items-start">
+        <div *ngFor="let lang of languages[0]">
+          <div class="d-flex flex-column justify-content-start align-items-center">
+            <img style="height: 50%; width: 50%;" [src]=lang.svg/>
+            <span class="caption">{{lang.language}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End skills -->
+    <!-- Resume -->
+    <div class="container pt-5">
+      <div class="row">
+        <div class="col-md-6 wow fadeInRight">
+          <h2 class="fg-dark">Education</h2>
+          <ul class="timeline mt-4 pr-md-5">
+
+            <li *ngFor="let exp of experience[0]">
+              <div class="title">{{ exp.year }}</div>
+              <div class="details">
+                <h5>{{ exp.position }}</h5>
+                <small class="fg-theme">{{ exp.place }}</small>
+                <p>{{ exp.description }}</p>
+              </div>
+            </li>
+
+
+          </ul>
+        </div>
+        <div class="col-md-6 wow fadeInRight" data-wow-delay="200ms">
+          <h2 class="fg-dark">Experience</h2>
+          <ul class="timeline mt-4 pr-md-5">
+            <li *ngFor="let exp of experience[1]">
+              <div class="title">{{ exp.year }}</div>
+              <div class="details">
+                <h5>{{ exp.position }}</h5>
+                <small class="fg-theme">{{ exp.place }}</small>
+                <li *ngFor="let desc of exp.description">
+                  <ul>{{desc}}</ul>
+                </li>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div> <!-- End resume -->
+  </div> <!-- End page about -->
+  
+  <!-- Page Service -->
+  <div class="vg-page page-service" id="projects">
+    <h1 class="text-center wow fadeInUp">Projects</h1>
+    <div class="d-flex flex-row justify-content-around align-items-center">
+      <div *ngFor="let service of services" class="col-md-6 col-lg-4 wow fadeInUp">
+        <div class="card card-body">
+          <div class="iconic">
+            <i class="fa-brands fa-android" aria-hidden="true"></i>
+          </div>
+          <h4 class="fg-theme">{{ service.title }}</h4>
+          <p>{{ service.description }}</p>
+          <a href="#" class="btn btn-theme btn-rounded">Read More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End page services -->
+
+  <!-- Awards page -->
+  <div class="vg-page page-blog" id="awards">
+    <h1 class="text-center fg-dark wow fadeInUp">Top Awards and Certificates</h1>
+    <div class="container">
+      <div class="row post-grid">
+        
+        <div *ngFor="let saward of award" class="col-md-6 col-lg-4 wow fadeInUp">
+          <div class="img-place"  [attr.data-src]=" saward.photo.toString()" data-fancybox> <!-- the one which pops up -->
+            <div class="card">
+              <img src="{{ saward.photo }}" alt="">
+              <div class="caption">
+                <a href="javascript:void(0)" class="post-category">{{ saward.title }}</a>
+                <a href="#" class="post-title">{{ saward.description}} </a>
+                <span class="post-date"><span class="sr-only">Received on</span>{{ saward.date }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 text-center py-3 wow fadeInUp">
+          <a href="/awards" class="btn btn-theme">See More Awards</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Awards page -->
+
+<!-- Footer -->
+<div class="vg-footer" id="contact">
+  <h1 class="text-center fg-white wow fadeInUp">Contact</h1>
+  <div class="d-flex flex-row justify-content-around align-items-center">
+    <p class="h2 fg-white">"{{ pinfo?.slogan }}"</p>
+    <div class="float-lg-right">
+      <p class="fg-white">Follow me</p>
+      <hr class="divider">
+      <ul class="list-unstyled">
+        <li><a href="{{ contact.github }}">Github</a></li>
+        <li><a href="{{ contact.linkedin }}">Linkedin</a></li>
+      </ul>
+    </div>
+    <div class="float-lg-right">
+      <p class="fg-white">Contact me</p>
+      <hr class="divider">
+      <ul class="list-unstyled">
+        <li>{{ contact.email }}</li>
+        <li> {{ contact.phone1 }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- End footer -->
+</div>
+<!-- End main wrapper -->

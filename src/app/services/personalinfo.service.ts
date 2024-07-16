@@ -13,7 +13,7 @@ export class PersonalinfoService {
       'name':'Jayakanthan Kumarasamy',
       'who': 'Software Engineer',
       'photo': '/assets/img/me.jpg',
-      'description': '',
+      'description': 'Driven and detail-oriented software engineer with experience in building and maintaining dynamic, user-friendly web applications. I have demonstrated ability to work collaboratively with cross-functional teams, taking projects from concept to launch and  to deliver high-quality projects on time.',
       'from': 'Chennai, India',
       'live': 'Chennai, India',
       'born': 0,

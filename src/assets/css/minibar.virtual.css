@@ -400,23 +400,23 @@
     }
 }
 
-/* Services */
-.page-service {
+/* Projects */
+.page-projects {
     background-color: #171925;
     color: #9FA2AB;
 }
 
-.page-service .card {
+.page-projects .card {
     margin: 32px 0;
     background-color: #202334;
 }
 
-.page-service .card .iconic {
+.page-projects .card .iconic {
     font-size: 40px;
     color: #fff;
 }
 
-.page-service .card .btn-theme {
+.page-projects .card .btn-theme {
     position: absolute;
     left: 0;
     right: 0;

@@ -12,7 +12,7 @@ export class AwardsService {
   getAwards(): Awards {
     this.data = [
 
-      { 'photo': './assets/img/awards/cisco-cyber.png', 'title': 'CISCO - Cyber Security Certificate', 'description': 'The cyber security coarse I took years back in cisco', 'date': ' March 27, 2023' },
+      { 'photo': '', 'title': 'Resilean Award', 'description': 'The Resilean Award in recognition of outstanding resilience and dedication in the face of challenges', 'date': ' October, 2023' },
     ];
 
     return this.data;

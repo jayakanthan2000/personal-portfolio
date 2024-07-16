@@ -24,7 +24,7 @@ export class IndexComponent implements OnInit {
   award: any;
   work: any;
   categories: any;
-  services: any;
+  projects: any;
 
   currentDate: Date = new Date();
 
@@ -39,7 +39,7 @@ export class IndexComponent implements OnInit {
     this.contact = this.contacts.getContacts();
     this.award = this.awards.getAwards();
     this.award = this.award.slice(0,3);
-    this.services = this.sv.getServices();
+    this.projects = this.sv.getServices();
     
   }
 
